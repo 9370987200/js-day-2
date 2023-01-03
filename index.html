@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    p{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    pre{
+        font-size: 17px;
+        color: brown;
+    }
+    div{
+        border: 2px solid green;
+        margin: 2px;
+    }
+    </style>
+<body>
+   <div><p> 1.What is creation phase and execution phase?</p>
+    <p> creation phase: In the first run it picks all functions and variables declarations and stores them in memory
+     with their reference
+     In second run it picks all vaariables and assign undefined to them <br>
+      execution phase : A phase where the actual code execution begins .and variables gets values.</p>
+    </div>
+
+
+ <div> <p> 2. What are objects in javascript?</p>
+    <p> In javascript objects are standlone entity with properties and type.
+      Object is collection of key-value pair and this pair is called property.</p>
+     <pre>const car={
+      type:"fiat",
+      model:"500",
+      color:"white"
+  }
+  console.log(car.color)
+  
+  output: white
+  </pre>
+</div>
+
+
+<div><p>3.What are function constructors?</p>
+
+    <pre>function person(first,last,age,eye){
+        this.firstname=first;
+        this.lastname=last;
+        this.age=age;
+        this.eyecolor=eye;
+    }
+    const mymother= new person("aruna","bhagyawant",40,"brown")
+    console.log(mymother)
+    
+    output: create new person mymother with properties 
+    firstname:aruna 
+    lastname:bhagyawant 
+    age:40 
+    eyecolor:brown
+    </pre>
+</div>
+
+<div><p>4.What are callbacks?</p>
+    A callback is a function passed as an argument to anather function. this technique allow a functionto call another 
+    function . a callback function can run after another functionhas finished.
+    <pre>function mydispayer(sumthing){
+        console.log(sumthing)
+    }
+    function mycalculater(num1,num2,mycallback){
+        let sum=num1+num2
+        mycallback(sum)
+    }
+    mycalculater(10,10,mydispayer)
+    output:20
+    </pre>
+</div>
+
+<div><p>5.Explain prototypes</p>
+    <p>Every object in javascript has a build in property, which is called its prototype.The prototype is itself an object 
+        ,so the prototype will have its own prototype , making what's called prototype chain. The chain ends when 
+        we reach a prototype that has null for its own prototype.</p>
+    <pre>function brother(first,last,age){
+        this.firstname=first
+        this.lastname=last
+        this.age=this.age
+    }
+    brother.prototype.nationality="english"
+    const mybrother= new brother("shubham","bhagyawant",25)
+    console.log('the nationality of my brother is '+ mybrother.nationality)
+    output:the nationality of my brother is english
+    </pre>
+</div>
+
+<div><p>6.What is prototype chain</p>
+    <p>Every object in javascript has a build in property, which is called its prototype.The prototype is itself an object 
+        ,so the prototype will have its own prototype , making what's called prototype chain. The chain ends when 
+        we reach a prototype that has null for its own prototype.</p>
+    <pre>function person(first,last,age,eye){
+        this.firstname=first;
+        this.lastname=last;
+        this.age=age;
+        this.eyecolor=eye;
+    }
+    const mymother= new person("aruna","bhagyawant",40,"brown")
+    console.log(mymother)
+    
+    output: firstname:aruna 
+            lastname:bhagyawant 
+            age:40 
+            eyecolor:brown
+    </pre>
+</div>
+
+
+<div><p>7.Give an example of inheritance using function constructor</p>
+    <p>Inharitance is usefull for code reusability :reuse properties and method ofan existing class when you create 
+        a new class.</p>
+    <pre>function myfriend(first,last,age){
+        this.firstname=first
+        this.lastname=last
+        this.age=age
+    }
+    const myfriend1=new myfriend("john","rally",20)
+    console.log(myfriend1.lastname)
+    
+    output: rally
+    </pre>
+</div>
+
+
+
+
+
+    <script src="./main.js"></script>
+</body>
+</html>
